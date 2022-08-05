@@ -13,8 +13,8 @@ export const createUser = (req, res) => {
 
     users.push({...user, id: uuid()});
     
-    console.log(`User [${user.username}] added to the database.`);
-    res.send(`User [${user.username}] added to the database.`);
+    console.log(`User [${user.username}] added to the database !`);
+    res.send(`User [${user.username}] added to the database !`);
 };
 
 export const getUser = (req, res) => {
@@ -22,7 +22,7 @@ export const getUser = (req, res) => {
 };
 
 export const deleteUser = (req, res) => { 
-    console.log(`user with id ${req.params.id} has been deleted`);
+    console.log(`User with id ${req.params.id} has been deleted !`);
     
     users = users.filter((user) => user.id !== req.params.id);
 };
@@ -33,5 +33,5 @@ export const updateUser =  (req,res) => {
     user.username = req.body.username;
     user.age = req.body.age;
 
-    console.log(`username has been updated to ${req.body.username}.age has been updated to ${req.body.age}`)
+    console.log(`Username has been updated to ${req.body.username}.age has been updated to ${req.body.age}`)
 };
